@@ -1,0 +1,617 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Segoe UI, Segoe UI Midlevel, Segoe WP, Arial, sans-serif;
+  overflow: hidden;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header, main, footer*/
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 4% 17% 1fr; /* side, folders_list, code)*/
+}
+.folders_list {
+  display: grid;
+  /*explorer, open_editor, folders_name, outline, timeline */
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.header ul {
+  display: flex;
+}
+.option_one li,
+.option_two li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.option_one li {
+  padding: 5px 7px 5px 7px;
+}
+.option_two li {
+  padding: 0 15px;
+}
+
+.logo {
+  height: 17px;
+  width: 17px;
+  padding: 0 0px 0 0px;
+}
+.files {
+  height: 100%;
+  width: 100%;
+}
+.auto {
+  height: auto;
+}
+.parent {
+  width: 100%;
+}
+
+.file_name ul {
+  display: flex;
+  gap: 20px;
+}
+.index_html ul {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 5px;
+}
+.file_path {
+  gap: 5px;
+  align-items: center;
+  padding: 2px 0 3px 15px;
+}
+
+.code_container {
+  flex-grow: 1;
+  width: 100%;
+}
+.code {
+  flex-grow: 1;
+  width: 85%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.numbers {
+  height: 100%;
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  color: gray;
+}
+.numbers ol {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.pic_in_pic {
+  height: 100%;
+  width: 12%;
+}
+
+.index_html {
+  width: 13%;
+  padding: 5px;
+}
+
+.direction,
+d ul {
+  flex-direction: column;
+}
+
+.side,
+.justify {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side li,
+.explorer {
+  padding: 10px;
+}
+
+.small_icon {
+  height: 20px;
+  width: 20px;
+}
+.explorer,
+.justify ul {
+  font-size: 11px;
+}
+.justify ul {
+  font-weight: bold;
+  padding: 2px;
+}
+
+/* file_copy icon style */
+.side ul:first-child li:first-child {
+  border-left: 2px solid #fff;
+}
+.side ul {
+  flex-direction: column;
+}
+.justify ul,
+.div ul {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.index_html,
+.div ul,
+.file_path {
+  font-size: 14px;
+}
+.div ul {
+  padding: 3px 0 3px 15px;
+}
+
+.project_folder {
+  width: 100%;
+  padding: 0 5px 0 0;
+}
+
+.html {
+  height: 15px;
+  width: 15px;
+  /* fill: orangered; */
+}
+.div {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* scrollbar style 
+.div::-webkit-scrollbar{
+    background-color:transparent;
+}
+.div::-webkit-scrollbar-thumb{
+    background-color: #515151;
+}
+.div::-webkit-scrollbar-track{
+    background-color:transparent;
+}
+
+code::-webkit-scrollbar{
+    background-color:transparent;
+}
+code::-webkit-scrollbar-thumb{
+    background-color: #515151;
+}
+code::-webkit-scrollbar-track{
+    background-color:transparent;
+}*/
+
+.footer {
+  padding: 0 10px;
+  color: #fff;
+  background-color: #3389c8;
+}
+.header,
+.footer {
+  font-size: 13px;
+}
+.footer ul {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  gap: 5px;
+}
+.left,
+.file_name,
+.explorer,
+.index_html,
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.left {
+  gap: 15px;
+}
+.left ul {
+  display: flex;
+  gap: 1px;
+  line-height: 1;
+}
+.right ul {
+  display: flex;
+  gap: 10px;
+}
+.right li,
+.left ul {
+  padding: 2px 3px;
+}
+
+.side_icons {
+  height: 25px;
+  width: 25px;
+}
+
+.arrow_icon {
+  height: 14px;
+  width: 14px;
+}
+.header_icon {
+  height: 20px;
+  width: 20px;
+}
+
+.close_icon {
+  height: 13px;
+  width: 13px;
+  display: none;
+}
+
+.index_html:hover .close_icon,
+.side ul,
+.flex {
+  display: flex;
+}
+
+/*  add new file icons style */
+.project_folder ul:nth-child(2) {
+  display: flex;
+  gap: 10px;
+  width: auto;
+  background-color: transparent;
+}
+.project_folder ul:nth-child(2) svg > path {
+  fill: transparent;
+}
+
+/* icons colors */
+.arrow_icon path {
+  fill: rgb(160, 159, 159);
+}
+.close_btn:hover {
+  background-color: #e81123;
+}
+
+.close_btn:hover path,
+.footer_icons {
+  fill: #fff;
+}
+
+.side path {
+  fill: gray;
+}
+.side li:hover path,
+#file_copy {
+  fill: #fff;
+}
+
+.file_name {
+  padding-right: 15px;
+}
+.footer_icons,
+.edit_icons {
+  height: 15px;
+  width: 15px;
+}
+.left ul:hover,
+.right li:hover {
+  background-color: rgb(140, 198, 236, 0.3);
+}
+/* html & css logo */
+.html {
+  font-weight: 700;
+  color: rgba(255, 68, 0, 0.788);
+  font-size: 12px;
+}
+.css {
+  font-weight: 700;
+  color: cornflowerblue;
+  font-size: 16px;
+}
+.right *,
+.left *,
+.file_name *,
+.side *,
+.file_path *,
+.open_editors,
+.outline,
+.timeline,
+.div ul,
+.explorer svg,
+.project_folder {
+  cursor: pointer;
+}
+.pic_in_pic,
+.header,
+.numbers,
+.explorer li {
+  cursor: default;
+}
+.code {
+  cursor: text;
+}
+.one {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pic_in_pic .border {
+  border-left: none;
+}
+
+.side {
+  background-color: #333333;
+}
+
+/*dark theme*/
+
+:root {
+  --header-bg-color: #323233;
+  --header-edit-path-fill: rgba(243, 243, 243, 0.8);
+  --input-color: #ffff;
+  --bg-color-dark-file_path-index_html-code-pic_in_pic-numbers: #1e1e1e;
+  --bg-color-dark-folders_list-file_name: #252526;
+  --header-hover: #3f4040;
+  --div-hover: #2a2d2e;
+  --outline-color: #474747;
+  --shadow-color: #111111;
+  --text-color-dark: #f0f0f0;
+  --close-path: #ffff;
+  --para_hover: #ffff;
+  --tag: #738080;
+  --tag-name: #5499d2;
+  --r-symbol: #f0f0f0;
+  --comment-line: #6a9955;
+  --att: #68cefe;
+  --value: #ce9162;
+}
+
+.header {
+  background-color: var(--header-bg-color);
+}
+
+.folders_list,
+.file_name {
+  background-color: var(--bg-color-dark-folders_list-file_name);
+}
+.header .option_one li:not(:first-child):hover,
+.header .option_two li:not(:last-child):hover {
+  background-color: var(--header-hover);
+}
+.div ul:hover {
+  background-color: var(--div-hover);
+}
+.file_path,
+.index_html,
+.code,
+.pic_in_pic,
+.numbers,
+input {
+  background-color: var(
+    --bg-color-dark-file_path-index_html-code-pic_in_pic-numbers
+  );
+}
+.header_icon path,
+.header_icon rect,
+.edit_icons path {
+  fill: var(--header-edit-path-fill);
+}
+.close_icon path,
+.path {
+  fill: var(--close-path);
+}
+.project_folder:hover ul:nth-child(2) svg > path {
+  fill: var(--text-color-dark);
+}
+input {
+  color: var(--input-color);
+}
+.explorer,
+.header ul,
+p,
+.div ul,
+.justify ul {
+  color: var(--text-color-dark);
+}
+
+.outline {
+  border-top: 1px solid var(--outline-color);
+  border-bottom: 1px solid var(--outline-color);
+}
+.open_editors {
+  border-bottom: 1px solid var(--outline-color);
+}
+.file_path {
+  box-shadow: 0px 3px 3px 0px var(--shadow-color);
+}
+.pic_in_pic {
+  box-shadow: 0px 0px 7px 0px var(--shadow-color);
+}
+.file_path p:hover,
+.index_html ul {
+  color: var(--para_hover);
+}
+.tag {
+  color: var(--tag);
+  font-size: 18px;
+}
+
+.tag_name {
+  color: var(--tag-name);
+}
+.r,
+.symbol {
+  color: var(--r-symbol);
+  font-size: 16px;
+}
+pre {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment_line span {
+  color: var(--comment-line);
+}
+/* .align,.ff{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+.open {
+  border-left: 1px solid var(--outline-color);
+}
+.open {
+  display: flex;
+  flex-direction: column;
+}
+.open div {
+  margin-left: 40px;
+}
+
+.att {
+  color: var(--att);
+}
+.value {
+  color: var(--value);
+}
+
+/*light theme*/
+
+:root {
+  --header-bg-color: #e5e5e5;
+  --header-edit-path-fill: #858685;
+  --input-color: #474748;
+  --bg-color-dark-file_path-index_html-code-pic_in_pic-numbers: #ffffff;
+  --bg-color-dark-folders_list-file_name: #f3f3f3;
+  --header-hover: #d7d7d7;
+  --div-hover: #e8e8e8;
+  --text-color-dark: #616161;
+  --outline-color: #d3d3d3;
+  --shadow-color: #f0f0f0;
+  --para_hover: #2c2c2c;
+  --tag: #800000;
+  --tag-name: #800000;
+  --r-symbol: #520000;
+  --comment-line: #098658;
+  --att: #e90000;
+  --value: #8400ff;
+}
+
+.header {
+  background-color: var(--header-bg-color);
+}
+.folders_list,
+.file_name {
+  background-color: var(--bg-color-dark-folders_list-file_name);
+}
+
+.header .option_one li:not(:first-child):hover,
+.header .option_two li:not(:last-child):hover {
+  background-color: var(--header-hover);
+}
+.div ul:hover {
+  background-color: var(--div-hover);
+}
+.file_path,
+.index_html,
+.code,
+.pic_in_pic,
+.numbers,
+input {
+  background-color: var(
+    --bg-color-dark-file_path-index_html-code-pic_in_pic-numbers
+  );
+}
+.header_icon path,
+.header_icon rect,
+.edit_icons path {
+  fill: var(--header-edit-path-fill);
+}
+.close_icon path,
+.path {
+  fill: var(--input-color);
+}
+.project_folder:hover ul:nth-child(2) svg > path {
+  fill: var(--input-color);
+}
+input {
+  color: var(--input-color);
+}
+
+.outline {
+  border-top: 1px solid var(--outline-color);
+  border-bottom: 1px solid var(--outline-color);
+}
+.open_editors {
+  border-bottom: 1px solid var(--outline-color);
+}
+.file_path {
+  box-shadow: 0px 3px 3px var(--shadow-color);
+}
+.pic_in_pic {
+  box-shadow: 0px 0px 7px 0px var(--shadow-color);
+}
+.file_path p:hover,
+.index_html ul {
+  color: var(--para_hover);
+}
+.file_path p {
+  color: var(--text-color-dark);
+}
+
+.tag {
+  color: var(--tag);
+}
+.tag_name {
+  color: var(--tag-name);
+}
+.r,
+.symbol {
+  color: var(--r-symbol);
+}
+
+.comment_line span {
+  color: var(--comment-line);
+}
+
+.open {
+  border-left: 1px solid var(--outline-color);
+}
+
+.att {
+  color: var(--att);
+}
+.value {
+  color: var(--value);
+}
+
+.pic_in_pic span {
+  font-size: 10px;
+}
+.pic_in_pic .open {
+  border: none;
+}
+.pic_in_pic .open div {
+  margin-left: 10px;
+}
